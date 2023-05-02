@@ -1,0 +1,35 @@
+{
+  "nodes": [
+    {
+      "type": "slash",
+      "name": "ticketsetup",
+      "guid": "e9347dec-0443-4b66-a048-7a6c6378f8bf",
+      "outputs": [],
+      "inputs": [],
+      "x": 250,
+      "y": 250,
+      "description": "ticketsetup",
+      "options": [],
+      "ephemeral": false
+    },
+    {
+      "type": "slash",
+      "name": "botactivity",
+      "guid": "86f5c6dd-1638-424a-93dd-51b5426ae788",
+      "outputs": [],
+      "inputs": [],
+      "x": 250,
+      "y": 250,
+      "description": "OUR FAVORITE COMMAND !!!",
+      "options": [
+        {
+          "name": "activity",
+          "description": "--",
+          "type": "STRING",
+          "required": true
+        }
+      ],
+      "ephemeral": false
+    }
+  ]
+}

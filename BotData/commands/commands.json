@@ -1,0 +1,23 @@
+{
+  "command": [
+    {
+      "name": "ticketsetup",
+      "description": "ticketsetup",
+      "ephemeral": false,
+      "options": []
+    },
+    {
+      "name": "botactivity",
+      "description": "OUR FAVORITE COMMAND !!!",
+      "ephemeral": false,
+      "options": [
+        {
+          "name": "activity",
+          "description": "--",
+          "type": "STRING",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

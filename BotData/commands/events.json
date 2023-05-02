@@ -1,0 +1,656 @@
+{
+  "command": [
+    {
+      "name": "User Joins Server",
+      "perms": [],
+      "actions": [
+        {
+          "name": "add-member",
+          "category": "User Action",
+          "type": "Add Role to User",
+          "messageActionRows": [],
+          "user": "${tempVars.newuser.id}",
+          "rolename": "1102559384418144297"
+        }
+      ],
+      "var": {
+        "user": "newuser"
+      }
+    },
+    {
+      "name": "Any Message",
+      "perms": [],
+      "actions": [],
+      "var": {}
+    },
+    {
+      "name": "User Kicked",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "kickuser"
+      }
+    },
+    {
+      "name": "User Banned",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "banuser"
+      }
+    },
+    {
+      "name": "Bot Initialization",
+      "perms": [],
+      "actions": [],
+      "var": {}
+    },
+    {
+      "name": "Channel Create",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "createdchannel"
+      }
+    },
+    {
+      "name": "Channel Delete",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "deletedchannel"
+      }
+    },
+    {
+      "name": "Channel Pins Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "updatepinschannel"
+      }
+    },
+    {
+      "name": "Channel Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "updatechannel"
+      }
+    },
+    {
+      "name": "Emoji Create",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "createdemoji"
+      }
+    },
+    {
+      "name": "Emoji Delete",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "deletedemoji"
+      }
+    },
+    {
+      "name": "Emoji Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "updatedemoji"
+      }
+    },
+    {
+      "name": "Guild Ban Remove",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Create",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Delete",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Member Available",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Member Speaking",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Member Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Unavailable",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Message Delete",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Message Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Role Create",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Role Delete",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Role Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Typing Start",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "User Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Button Interaction",
+      "perms": [],
+      "actions": [
+        {
+          "name": "ticket-sytsem",
+          "category": "Control",
+          "type": "Switch Case",
+          "valueActions": {
+            "support_ticket": [
+              {
+                "name": "create_ticket_support",
+                "category": "Channel Action",
+                "type": "Create Channel",
+                "messageActionRows": [],
+                "channelname": "support-${tempVars.buttoninteraction.member.displayName}",
+                "chancategory": "1102634042379214958",
+                "reason": "Ticket",
+                "channeltype": "Text",
+                "savetovariable": "new_ticket",
+                "savetovariabletype": "temp"
+              },
+              {
+                "name": "wait-1-sec",
+                "category": "Control",
+                "type": "Wait",
+                "messageActionRows": [],
+                "waitduration": "1",
+                "unit": "seconds"
+              },
+              {
+                "name": "member-perms",
+                "category": "Channel Action",
+                "type": "Update Channel Permissions",
+                "messageActionRows": [],
+                "channelname": "${tempVars.new_ticket.id}",
+                "permid": "1102559384418144297",
+                "permissions": [
+                  "VIEW_CHANNEL"
+                ],
+                "allow": "Deny"
+              },
+              {
+                "name": "supporter-perms",
+                "category": "Channel Action",
+                "type": "Update Channel Permissions",
+                "messageActionRows": [],
+                "channelname": "${tempVars.new_ticket.id}",
+                "permid": "1102559532921655406",
+                "permissions": [
+                  "ADD_REACTIONS",
+                  "VIEW_CHANNEL",
+                  "SEND_MESSAGES"
+                ],
+                "allow": "Allow"
+              },
+              {
+                "name": "moderator-perms",
+                "category": "Channel Action",
+                "type": "Update Channel Permissions",
+                "messageActionRows": [],
+                "channelname": "${tempVars.new_ticket.id}",
+                "permid": "1102559456337862656",
+                "permissions": [
+                  "ADD_REACTIONS",
+                  "VIEW_CHANNEL",
+                  "SEND_MESSAGES"
+                ],
+                "allow": "Allow"
+              },
+              {
+                "name": "early-acces-perms",
+                "category": "Channel Action",
+                "type": "Update Channel Permissions",
+                "messageActionRows": [],
+                "channelname": "${tempVars.new_ticket.id}",
+                "permid": "1102579935475925022",
+                "permissions": [
+                  "ADD_REACTIONS",
+                  "VIEW_CHANNEL",
+                  "SEND_MESSAGES"
+                ],
+                "allow": "Deny"
+              },
+              {
+                "name": "ticket__embed1_1",
+                "category": "Message",
+                "type": "Send Embed",
+                "messageActionRows": [],
+                "channelname": "${tempVars.new_ticket.id}",
+                "color": "00FF00",
+                "title": "Support Ticket",
+                "url": "",
+                "authorname": "",
+                "authorimageurl": "",
+                "authorlink": "",
+                "description": "Welcome to your report ticket, a team member will be there for you! - Please describe your problem in time!",
+                "thumbnail": "",
+                "image": "",
+                "footer": "",
+                "timestamp": "false",
+                "savetovariable": "",
+                "savetovariabletype": "temp"
+              },
+              {
+                "name": "ticket-embed",
+                "category": "Message",
+                "type": "Send Embed",
+                "messageActionRows": [
+                  {
+                    "rowtype": "button",
+                    "buttons": [
+                      {
+                        "label": "Close - Ticket",
+                        "customid": "close-ticket",
+                        "style": "DANGER",
+                        "emoji": "",
+                        "URL": "",
+                        "ephemeral": false
+                      }
+                    ]
+                  }
+                ],
+                "channelname": "${tempVars.new_ticket.id}",
+                "color": "00FF00",
+                "title": "Ticket - System",
+                "url": "",
+                "authorname": "",
+                "authorimageurl": "",
+                "authorlink": "",
+                "description": "Choose an action !",
+                "thumbnail": "",
+                "image": "",
+                "footer": "TherbiumCraft.net - TicketSystem",
+                "timestamp": "false",
+                "savetovariable": "",
+                "savetovariabletype": "temp"
+              },
+              {
+                "name": "reply-create",
+                "category": "Interaction",
+                "type": "Reply To Interaction With Message",
+                "messageActionRows": [],
+                "interactionobject": "${tempVars.buttoninteraction}",
+                "messagetext": "You can find your ticket here --> <#${tempVars.new_ticket.id}>"
+              }
+            ],
+            "teamapplication_ticket": [],
+            "report_ticket": [
+              {
+                "name": "create-report",
+                "category": "Channel Action",
+                "type": "Create Channel",
+                "messageActionRows": [],
+                "channelname": "report-${tempVars.buttoninteraction.member.displayName}",
+                "chancategory": "1102634042379214958",
+                "reason": "--",
+                "channeltype": "Text",
+                "savetovariable": "new_ticket",
+                "savetovariabletype": "temp"
+              },
+              {
+                "name": "wait-1-sec_1",
+                "category": "Control",
+                "type": "Wait",
+                "messageActionRows": [],
+                "waitduration": "1",
+                "unit": "seconds"
+              },
+              {
+                "name": "member-perms_1",
+                "category": "Channel Action",
+                "type": "Update Channel Permissions",
+                "messageActionRows": [],
+                "channelname": "${tempVars.new_ticket.id}",
+                "permid": "1102559384418144297",
+                "permissions": [
+                  "VIEW_CHANNEL"
+                ],
+                "allow": "Deny"
+              },
+              {
+                "name": "supporter-perms_1",
+                "category": "Channel Action",
+                "type": "Update Channel Permissions",
+                "messageActionRows": [],
+                "channelname": "${tempVars.new_ticket.id}",
+                "permid": "1102559532921655406",
+                "permissions": [
+                  "ADD_REACTIONS",
+                  "VIEW_CHANNEL",
+                  "SEND_MESSAGES"
+                ],
+                "allow": "Allow"
+              },
+              {
+                "name": "moderator-perms_1",
+                "category": "Channel Action",
+                "type": "Update Channel Permissions",
+                "messageActionRows": [],
+                "channelname": "${tempVars.new_ticket.id}",
+                "permid": "1102559456337862656",
+                "permissions": [
+                  "ADD_REACTIONS",
+                  "VIEW_CHANNEL",
+                  "SEND_MESSAGES"
+                ],
+                "allow": "Allow"
+              },
+              {
+                "name": "early-acces-perms_1",
+                "category": "Channel Action",
+                "type": "Update Channel Permissions",
+                "messageActionRows": [],
+                "channelname": "${tempVars.new_ticket.id}",
+                "permid": "1102579935475925022",
+                "permissions": [
+                  "ADD_REACTIONS",
+                  "VIEW_CHANNEL",
+                  "SEND_MESSAGES"
+                ],
+                "allow": "Deny"
+              },
+              {
+                "name": "ticket_embed__1",
+                "category": "Message",
+                "type": "Send Embed",
+                "messageActionRows": [],
+                "channelname": "${tempVars.new_ticket.id}",
+                "color": "00FF00",
+                "title": "Report - Ticket",
+                "url": "",
+                "authorname": "",
+                "authorimageurl": "",
+                "authorlink": "",
+                "description": "Welcome to your report ticket, a team member will be there for you! - Please indicate which user you want to report and why!",
+                "thumbnail": "",
+                "image": "",
+                "footer": "",
+                "timestamp": "false",
+                "savetovariable": "",
+                "savetovariabletype": "temp"
+              },
+              {
+                "name": "ticket-embed_1",
+                "category": "Message",
+                "type": "Send Embed",
+                "messageActionRows": [
+                  {
+                    "rowtype": "button",
+                    "buttons": [
+                      {
+                        "label": "Close - Ticket",
+                        "customid": "delete-ticket-report",
+                        "style": "DANGER",
+                        "emoji": "",
+                        "URL": "",
+                        "ephemeral": false
+                      }
+                    ]
+                  }
+                ],
+                "channelname": "${tempVars.new_ticket.id}",
+                "color": "00FF00",
+                "title": "Ticket - System",
+                "url": "",
+                "authorname": "",
+                "authorimageurl": "",
+                "authorlink": "",
+                "description": "Choose an action !",
+                "thumbnail": "",
+                "image": "",
+                "footer": "TherbiumCraft.net - TicketSystem",
+                "timestamp": "false",
+                "savetovariable": "",
+                "savetovariabletype": "temp"
+              },
+              {
+                "name": "reply-create_1",
+                "category": "Interaction",
+                "type": "Reply To Interaction With Message",
+                "messageActionRows": [],
+                "interactionobject": "${tempVars.buttoninteraction}",
+                "messagetext": "You can find your ticket here --> <#${tempVars.new_ticket.id}>"
+              }
+            ]
+          },
+          "messageActionRows": [],
+          "varname": "${tempVars.buttoninteraction.customId}"
+        },
+        {
+          "name": "ticket-open-action",
+          "category": "Control",
+          "type": "Switch Case",
+          "valueActions": {
+            "close-ticket": [
+              {
+                "name": "delete-ticket",
+                "category": "Channel Action",
+                "type": "Delete Channel",
+                "messageActionRows": [],
+                "channelname": "${tempVars.buttoninteraction.channelId}",
+                "reason": "--"
+              }
+            ],
+            "delete-ticket-report": [
+              {
+                "name": "delete-ticket-report",
+                "category": "Channel Action",
+                "type": "Delete Channel",
+                "messageActionRows": [],
+                "channelname": "${tempVars.buttoninteraction.channelId}",
+                "reason": "--"
+              }
+            ]
+          },
+          "messageActionRows": [],
+          "varname": "${tempVars.buttoninteraction.customId}"
+        }
+      ],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Select Interaction",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Command Interaction",
+      "perms": [],
+      "actions": [
+        {
+          "name": "commands",
+          "category": "Control",
+          "type": "Switch Case",
+          "valueActions": {
+            "ticketsetup": [
+              {
+                "name": "ticket-embded",
+                "category": "Message",
+                "type": "Send Embed",
+                "messageActionRows": [
+                  {
+                    "rowtype": "button",
+                    "buttons": [
+                      {
+                        "label": "Support",
+                        "customid": "support_ticket",
+                        "style": "PRIMARY",
+                        "emoji": "❓",
+                        "URL": "",
+                        "ephemeral": true
+                      },
+                      {
+                        "label": "Report",
+                        "customid": "report_ticket",
+                        "style": "PRIMARY",
+                        "emoji": "📢",
+                        "URL": "",
+                        "ephemeral": true
+                      }
+                    ]
+                  }
+                ],
+                "channelname": "1102610757419552768",
+                "color": "00FF00",
+                "title": "Ticket System",
+                "url": "",
+                "authorname": "",
+                "authorimageurl": "",
+                "authorlink": "",
+                "description": "Click on the appropriate button for help",
+                "thumbnail": "",
+                "image": "",
+                "footer": "TherbiumCraft.net - TicketSystem",
+                "timestamp": "false",
+                "savetovariable": "",
+                "savetovariabletype": "temp"
+              },
+              {
+                "name": "delete-ticket-setup",
+                "category": "Interaction",
+                "type": "Delete Interaction Reply",
+                "messageActionRows": [],
+                "interactionobject": "${tempVars.commandinteraction}"
+              }
+            ],
+            "botactivity": [
+              {
+                "name": "get-actitvity",
+                "category": "Interaction",
+                "type": "Get Interaction Option",
+                "messageActionRows": [],
+                "interactionobject": "${tempVars.commandinteraction}",
+                "optiontype": "STRING",
+                "commandoptionname": "activity",
+                "varname": "activity",
+                "savevartype": "temp"
+              },
+              {
+                "name": "set-activity",
+                "category": "Bot Action",
+                "type": "Set Bot Activity",
+                "messageActionRows": [],
+                "activityname": "${tempVars.activity}",
+                "activitytype": "PLAYING",
+                "streamurl": ""
+              },
+              {
+                "name": "reply-actvity",
+                "category": "Interaction",
+                "type": "Reply To Interaction With Message",
+                "messageActionRows": [],
+                "interactionobject": "${tempVars.commandinteraction}",
+                "messagetext": "The activity has been changed to : ${tempVars.activity}"
+              }
+            ]
+          },
+          "messageActionRows": [],
+          "varname": "${tempVars.commandinteraction.commandName}"
+        }
+      ],
+      "var": {
+        "channel": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"level":"error","message":"Bot login: Error [DISALLOWED_INTENTS]: Privileged intent provided is not enabled or whitelisted.","service":"user-service","timestamp":"2023-05-01 06:46:42 PM +0200"}
